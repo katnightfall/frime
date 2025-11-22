@@ -1,0 +1,10 @@
+{
+    "name": "pp-doj-mdt",
+    "version": "1.0.0",
+    "main": "server/server.js",
+    "author": "PixelPrecision Studio",
+    "license": "MIT",
+    "dependencies": {
+        "googleapis": "^144.0.0"
+    }
+}

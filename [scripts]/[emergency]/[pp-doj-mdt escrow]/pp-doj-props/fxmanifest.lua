@@ -1,0 +1,8 @@
+fx_version 'bodacious'
+game 'gta5'
+lua54 'yes'
+author 'PixelPrecision Studio'
+version '1.0.0'
+description ''
+data_file 'DLC_ITYP_REQUEST' 'stream/pp_doj.ytyp'
+dependency '/assetpacks'

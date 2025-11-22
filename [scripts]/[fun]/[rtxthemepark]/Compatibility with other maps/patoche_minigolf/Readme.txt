@@ -1,0 +1,1 @@
+Just download the latest version of patoche_minigolf from keymaster

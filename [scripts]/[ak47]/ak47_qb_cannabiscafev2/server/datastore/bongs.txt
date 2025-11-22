@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "capacity": 50,
+        "stock": 33
+    },
+    {
+        "id": 2,
+        "capacity": 50,
+        "stock": 36
+    },
+    {
+        "id": 3,
+        "capacity": 50,
+        "stock": 32
+    },
+    {
+        "id": 4,
+        "capacity": 50,
+        "stock": 30
+    },
+    {
+        "id": 5,
+        "capacity": 50,
+        "stock": 50
+    },
+    {
+        "id": 6,
+        "capacity": 50,
+        "stock": 36
+    },
+    {
+        "id": 7,
+        "capacity": 50,
+        "stock": 49
+    },
+    {
+        "id": 8,
+        "capacity": 50,
+        "stock": 49
+    }
+]

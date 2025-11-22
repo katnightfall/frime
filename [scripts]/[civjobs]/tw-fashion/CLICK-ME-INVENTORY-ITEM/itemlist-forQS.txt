@@ -1,0 +1,77 @@
+["wool"] = {
+    ["name"] = "wool",
+    ["label"] = "Wool",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "wool.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["combinable"] = nil,
+    ["description"] = "Wool for making clothes."
+},
+
+["darkbluedye"] = {
+    ["name"] = "darkbluedye",
+    ["label"] = "Dark Blue Dye",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "darkbluedye.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Dark Blue Dye for making clothes."
+},
+
+["purpledye"] = {
+    ["name"] = "purpledye",
+    ["label"] = "Purple Dye",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "purpledye.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Purple Dye for making clothes."
+},
+
+["blackdye"] = {
+    ["name"] = "blackdye",
+    ["label"] = "Black Dye",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "blackdye.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Black Dye for making clothes."
+},
+
+["whitedye"] = {
+    ["name"] = "whitedye",
+    ["label"] = "White Dye",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "whitedye.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["combinable"] = nil,
+    ["description"] = "White Dye for making clothes."
+},
+
+["bluedye"] = {
+    ["name"] = "bluedye",
+    ["label"] = "Blue Dye", 
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["ammotype"] = nil,
+    ["image"] = "bluedye.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Blue Dye for making clothes."
+},

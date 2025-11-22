@@ -1,0 +1,48 @@
+lua     -- Job
+    ['wool'] = {
+        label = 'Wool',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'Wool for making clothes',
+    },
+    
+    ['darkbluedye'] = {
+        label = 'Dark Blue Dye',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'Dark Blue for making clothes',
+    },
+    
+    ['purpledye'] = {
+        label = 'Purple Dye',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'Purple Dye for making clothes',
+    },
+    
+    ['blackdye'] = {
+        label = 'Black Dye',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'Black Dye for making clothes',
+    },
+    
+    ['whitedye'] = {
+        label = 'White Dye',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'White Dye for making clothes',
+    },
+    
+    ['bluedye'] = {
+        label = 'Blue Dye',
+        weight = 100,
+        stack = true,
+        close = false,
+        description = 'Blue Dye for making clothes',
+    },

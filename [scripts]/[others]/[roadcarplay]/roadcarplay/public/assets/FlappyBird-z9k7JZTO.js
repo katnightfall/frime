@@ -1,0 +1,1 @@
+import{_ as a,q as s,B as t,j as o}from"./index-T7h_UdHs.js";const r={name:"FlappyBird"},p={class:"home"};function n(c,e,d,i,l,_){return o(),s("div",p,[...e[0]||(e[0]=[t("iframe",{src:"https://playcanv.as/p/2OlkUaxF/",width:"100%",height:"100%"},null,-1)])])}const m=a(r,[["render",n],["__scopeId","data-v-d111d5fb"]]);export{m as default};

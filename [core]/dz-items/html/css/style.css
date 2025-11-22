@@ -1,0 +1,1387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar { display: none!important; }
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+p {
+	margin: 0px;
+}
+
+/**************************** spawn item menu ****************************/
+
+.bg1, .bg2, .bg3, .bg4, .bg5 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+}
+
+.bg1 {
+	z-index: 10;
+}
+
+.bg2 {
+	z-index: 30;
+}
+
+.bg3 {
+	z-index: 50;
+}
+
+.bg4 {
+	z-index: 70;
+}
+
+.bg5 {
+	z-index: 80;
+}
+
+.items-list-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 900px;
+    height: 700px;
+    background: url(../img/bg.png);
+    background-size: 200% 200%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 20;
+}
+
+.items-list-menu .selected-items-btn {
+	position: absolute;
+    top: 20px;
+    left: 30px;
+    width: fit-content;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3px 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+	cursor: pointer;
+}
+
+.items-list-menu .selected-items-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.items-list-menu .selected-items-btn span {
+    font-size: 14px;
+}
+
+.items-list-menu .search-input {
+	position: absolute;
+    top: 12px;
+    right: 25px;
+    padding: 2px 10px;
+    width: 225px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid rgb(255 255 255 / 70%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: rgb(255 255 255 / 70%);
+}
+
+.items-list-menu .search-input::placeholder {
+    color: rgb(255 255 255 / 70%);
+}
+
+.items-list-menu .inside-out {
+	position: absolute;
+    top: 50px;
+    left: 2.35%;
+    width: 95.3%;
+    max-width: 100%;
+    height: 590px;
+    max-height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.items-list-menu .inside {
+	position: absolute;
+    top: 4%;
+    left: 2.35%;
+    width: 95.3%;
+    max-width: 100%;
+    height: 92%;
+    max-height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.items-list-menu .show-more-slot {
+	position: relative;
+    width: 130px;
+    height: 130px;
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px;
+    margin: 2px;
+    transition: opacity 0.2s ease 0s;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif !important;
+    color: white;
+    font-size: 12px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	text-transform: uppercase;
+}
+
+.items-list-menu .show-more-slot p {
+	transition: transform .2s;
+}
+
+.items-list-menu .show-more-slot:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.items-list-menu .show-more-slot:hover > p {
+	transform: scale(1.1);
+}
+
+.items-list-menu .item-slot {
+	position: relative;
+    width: 130px;
+    height: 130px;
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px;
+    margin: 2px;
+    transition: opacity 0.2s ease 0s;
+    cursor: pointer;
+}
+
+.items-list-menu .item-slot.checked {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.items-list-menu .item-slot:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.items-list-menu .item-slot .label {
+	position: absolute;
+    top: 0%;
+    width: 92%;
+    background-color: transparent;
+	font-weight: 400;
+    padding: 2.5px;
+    padding-left: 5px;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.items-list-menu .item-slot .img {
+	max-width: 100%;
+    max-height: 100%;
+    padding: 0.5vw;
+}
+
+.items-list-menu .item-slot .img img {
+	display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 25%;
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 100%;
+}
+
+.items-list-menu .item-slot .item-check {
+	position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 100px;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.items-list-menu .item-slot .item-check.checked {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	text-align: center;
+    font-size: 15px;
+    color: white;
+    background: rgba(0, 255, 0, 0.6);
+}
+
+.items-list-menu .bottom {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.items-list-menu .bottom .clear {
+	position: relative;
+    display: inline-block;
+    float: right;
+    margin: 14px 12px 14px 0px;
+	color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+	padding: 5px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+    width: 120px;
+    text-align: center;
+    cursor: default;
+}
+
+.items-list-menu .bottom .spawn {
+	position: relative;
+    display: inline-block;
+    float: right;
+    margin: 14px 21px 14px 0px;
+	color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+	padding: 5px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+    width: 120px;
+    text-align: center;
+    cursor: default;
+}
+
+.items-list-menu .bottom .active {
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.items-list-menu .bottom .active:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.items-list-menu .bottom .checkbox-div {
+    position: relative;
+    display: inline-block;
+    margin: 22px 0px 0px 22px;
+}
+
+.items-list-menu .bottom .checkbox-div .item-infos-checkbox-control {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.0rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: white;
+    width: 21.2vh;
+	cursor: pointer;
+}
+
+.items-list-menu .bottom .checkbox-div .item-infos-checkbox {
+	-webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    color: #1DA1F2;
+}
+
+.items-list-menu .bottom .checkbox-div .item-infos-checkbox::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	transform: scale(0);
+	transform-origin: bottom left;
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--form-control-color);
+	background-color: white;
+}
+
+.items-list-menu .bottom .checkbox-div .item-infos-checkbox:checked::before {
+	transform: scale(1);
+}
+
+/********************************* item info container *********************************/
+
+.players-list-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 200px);
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 300px;
+    height: 696px;
+    background: url(../img/bg.png);
+    background-size: 200% 200%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 35;
+	font-size: 14px;
+    font-family: 'Poppins', sans-serif !important;
+    color: white;
+	opacity: 0;
+}
+
+.players-list-menu .search-div {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: calc(88% - 24px);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px 12px;
+    float: left;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.players-list-menu .search-div .subtitle {
+	display: inline-block;
+    font-size: 12px;
+}
+
+.players-list-menu .search-div .refresh {
+	display: inline-block;
+    font-size: 12px;
+	float: right;
+	cursor: pointer;
+	margin-right: 2px;
+}
+
+.players-list-menu .search-div .refresh:hover {
+	text-decoration: underline;
+}
+
+.players-list-menu .search-div .search-input {
+    width: 100%;
+    background-clip: padding-box;
+    background-color: transparent;
+    color: white;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    outline: none;
+    margin-top: 3px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px;
+}
+
+.players-list-menu .search-div .search-input::placeholder {
+	color: white;
+	opacity: 0.5;
+}
+
+.players-list-menu .players-list {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: calc(88% - 20px);
+    height: 555px;
+    padding: 12px 10px;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.players-list-menu .players-list .player-div {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px 10px;
+    margin-bottom: 2px;
+	cursor: pointer;
+    border-radius: 4px;
+}
+
+.players-list-menu .players-list .player-div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spawn-items-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 710px;
+    height: 696px;
+    background: url(../img/bg.png);
+    background-size: 200% 200%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 40;
+	font-size: 14px;
+    font-family: 'Poppins', sans-serif !important;
+    color: white;
+}
+
+.spawn-items-menu .selected-items-title {
+	position: absolute;
+    top: 22px;
+    left: 22px;
+    font-size: 15px;
+}
+
+.spawn-items-menu .selected-items {
+	position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 670px;
+    max-width: 100%;
+    height: 280px;
+    max-height: 100%;
+    float: left;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.spawn-items-menu .selected-items .inside {
+	position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: 95%;
+    max-width: 100%;
+    height: 210px;
+    max-height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot {
+	position: relative;
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px;
+    margin: 2px;
+    transition: opacity 0.2s ease 0s;
+    cursor: pointer;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot i {
+	position: absolute;
+    bottom: 6px;
+    left: 6px;
+    color: rgba(255,255,255,0.2);
+	transition: transform .2s;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot:hover > i {
+    color: rgba(255,255,255,0.8);
+}
+
+.spawn-items-menu .selected-items .inside .item-slot i:hover {
+	transform: scale(1.2);
+    color: rgba(255,0,0,0.8);
+}
+
+.spawn-items-menu .selected-items .inside .item-slot .label {
+	position: absolute;
+    top: 0%;
+    width: 92%;
+    background-color: transparent;
+	font-weight: 400;
+    padding: 2.5px;
+    padding-left: 5px;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot .img {
+	max-width: 100%;
+    max-height: 100%;
+    padding: 0.5vw;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot .img img {
+	display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 25%;
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 100%;
+}
+
+.spawn-items-menu .selected-items .inside .item-slot .selected-item-amout {
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 75px;
+    outline: none;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: right;
+    font-size: 12px;
+    padding: 5px 6px;
+}
+
+.spawn-items-menu .selected-items .checkbox-div {
+    position: absolute;
+    bottom: 15px;
+    left: 18px;
+}
+
+.spawn-items-menu .selected-items .checkbox-div .packaged-items-checkbox-control {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: white;
+	cursor: pointer;
+}
+
+.spawn-items-menu .selected-items .checkbox-div .packaged-items-checkbox {
+	-webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    color: #1DA1F2;
+}
+
+.spawn-items-menu .selected-items .checkbox-div .packaged-items-checkbox::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	transform: scale(0);
+	transform-origin: bottom left;
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--form-control-color);
+	background-color: white;
+}
+
+.spawn-items-menu .selected-items .checkbox-div .packaged-items-checkbox:checked::before {
+	transform: scale(1);
+}
+
+.spawn-items-menu .target-players-title {
+	position: absolute;
+    top: 352px;
+    left: 22px;
+    font-size: 15px;
+}
+
+.spawn-items-menu .target-players {
+	position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 670px;
+    max-width: 100%;
+    height: 252px;
+    max-height: 100%;
+    float: left;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.spawn-items-menu .target-players .checkbox-div {
+    position: relative;
+    display: inline-block;
+    margin: 16px 0px 0px 15px;
+}
+
+.spawn-items-menu .target-players .checkbox-div .spawn-myself-checkbox-control {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: white;
+    width: 21.2vh;
+	cursor: pointer;
+}
+
+.spawn-items-menu .target-players .checkbox-div .spawn-myself-checkbox {
+	-webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    color: #1DA1F2;
+}
+
+.spawn-items-menu .target-players .checkbox-div .spawn-myself-checkbox::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	transform: scale(0);
+	transform-origin: bottom left;
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--form-control-color);
+	background-color: white;
+}
+
+.spawn-items-menu .target-players .checkbox-div .spawn-myself-checkbox:checked::before {
+	transform: scale(1);
+}
+
+.spawn-items-menu .target-players .players-list-title {
+    margin: 20px 0px 0px 15px;
+}
+
+.spawn-items-menu .target-players .players-list {
+    width: calc(100% - 32px);
+    height: 108px;
+    margin: 4px 15px 0px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0,0,0,0.1);
+    padding-bottom: 7px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.spawn-items-menu .target-players .disabled-players-list {
+    position: absolute;
+    top: 63px;
+    width: calc(100% - 34px);
+    height: 113px;
+    overflow: hidden;
+    margin: 16px 16px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: rgba(33, 68, 98, 0.6);
+}
+
+.spawn-items-menu .target-players .players-actions-btns {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    cursor: default;
+    background: transparent;
+    padding: 4px 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 5px;
+	margin: 13px 0px 0px 15px;
+}
+
+.spawn-items-menu .target-players .players-actions-btns.active {
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.spawn-items-menu .target-players .players-actions-btns.active:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.spawn-items-menu .target-players .ms10 {
+	margin: 13px 0px 0px 8px;
+}
+
+.spawn-items-menu .target-players .msr {
+	float: right;
+	margin: 13px 8px 0px 0px;
+}
+
+.spawn-items-menu .target-players .closest-players-dist {
+	float: right;
+	display: inline-block;
+    position: relative;
+    width: fit-content;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    cursor: default;
+    background: transparent;
+    padding: 4px 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 5px;
+	margin: 13px 15px 0px 0px;
+	width: 80px;
+	outline: none;
+}
+
+.spawn-items-menu .target-players .closest-players-dist::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.spawn-items-menu .target-players .closest-players-dist.active {
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	cursor: auto;
+}
+
+.spawn-items-menu .target-players .players-list .selected-player {
+    display: inline-block;
+    font-size: 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.6);
+    border-image: initial;
+    padding: 4px 10px;
+    border-radius: 25px;
+    margin: 8px 0px 0px 5px;
+}
+
+.spawn-items-menu .target-players .players-list .selected-player i {
+    cursor: pointer;
+    color: white;
+}
+
+.spawn-items-menu .target-players .players-list .selected-player i:hover {
+    color: red;
+}
+
+.spawn-items-menu .spawn {
+	position: absolute;
+    bottom: 15px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    width: 120px;
+    text-align: center;
+    cursor: default;
+    background: transparent;
+    padding: 5px 22px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 5px;
+}
+
+.spawn-items-menu .spawn.active {
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.spawn-items-menu .spawn.active:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.spawn-items-menu .spawn-progress {
+	position: absolute;
+    bottom: 15px;
+    left: 20px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    width: 34px;
+    padding: 8px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.spawn-items-menu .spawn-progress:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+
+.spawn-progress-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 700px;
+    height: 460px;
+    background: url(../img/bg.png);
+    background-size: 200% 200%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 60;
+	font-size: 14px;
+    font-family: 'Poppins', sans-serif !important;
+    color: white;
+}
+
+.spawn-progress-menu .title {
+	position: absolute;
+    top: 12px;
+    left: 22px;
+    font-size: 15px;
+}
+
+.spawn-progress-menu .list {
+	position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 640px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    float: left;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+	padding: 10px 10px;
+}
+
+/* .spawn-progress-menu .list i { */
+	/* float: right; */
+	/* line-height: 1.4; */
+    /* font-size: 16px; */
+    /* width: 25px; */
+    /* text-align: center; */
+/* } */
+
+.spawn-progress-menu .players-progress {
+	height: 336px;
+    overflow: auto;
+}
+
+.spawn-progress-menu .players-progress .player-progress {
+	border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 6px 15px;
+    border-radius: 5px;
+	margin: 6px;
+	font-weight: bold;
+}
+
+.spawn-progress-menu .players-progress .success {
+	color: rgb(0, 255, 0);
+    border-color: rgba(0, 255, 0, 0.6);
+}
+
+.spawn-progress-menu .players-progress .error {
+	color: rgb(255, 0, 0);
+    border-color: rgba(255, 0, 0, 0.8);
+}
+
+.spawn-progress-menu .players-progress .exclamation {
+	color: rgb(255, 128, 0);
+    border-color: rgba(255, 128, 0, 0.8);
+}
+
+.spawn-progress-menu .clear {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    width: 120px;
+    text-align: center;
+    cursor: default;
+    background: transparent;
+    padding: 5px 22px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 5px;
+}
+
+.spawn-progress-menu .clear.active {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.spawn-progress-menu .clear.active:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.rotate {
+	animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+	to { transform: rotate(360deg); }
+}
+
+/********************************* item info container *********************************/
+
+.iteminfo-container {
+	display: none;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.15);
+    color: rgba(220, 220, 220, 1);
+	backdrop-filter: blur(8px);
+    font-size: 1.35vh;
+    font-weight: 0;
+    left: 41%;
+    max-height: 25%;
+    min-height: 50px;
+    overflow: hidden;
+    padding: 1%;
+    pointer-events: none;
+    position: absolute;
+    text-decoration: none;
+    top: 50%;
+    transition: opacity 0.6s ease;
+    width: 13%;
+    z-index: 25;
+}
+
+.iteminfo-container p {
+	margin: 0px;
+}
+
+.item-info-title {
+    text-transform: normal;
+    font-weight: 900;
+    font-family: sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.3px;
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.item-info-description {
+    text-transform: normal;
+    font-size: 1.4vh;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    font-family: 'Poppins', sans-serif !important;
+    color: white;
+    padding-left: 5px;
+    padding-top: .5vh;
+}
+
+/********************************* packaged items list menu *********************************/
+
+.packaged-items-list-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 771px;
+    height: 515px;
+    background: url(../img/bg.png);
+    background-size: 250% 250%;
+	background-position: center center;
+    border-radius: 6px;
+	transition: transform .4s;
+    z-index: 75;
+}
+
+.packaged-items-list-menu .top {
+	position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.packaged-items-list-menu .inside-out {
+	position: absolute;
+    top: 45px;
+    left: 2.35%;
+    width: 95.3%;
+    max-width: 100%;
+    height: 406px;
+    max-height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.packaged-items-list-menu .inside {
+	position: absolute;
+    top: 4%;
+    left: 2.35%;
+    width: 95.3%;
+    max-width: 100%;
+    height: 92%;
+    max-height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.packaged-items-list-menu .item-slot {
+	position: relative;
+    width: 130px;
+    height: 175px;
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px;
+    margin: 4px;
+    transition: opacity 0.2s ease 0s;
+}
+
+.packaged-items-list-menu .item-slot:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.packaged-items-list-menu .item-slot:hover .extract {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.packaged-items-list-menu .item-slot .label {
+	position: absolute;
+    top: 0%;
+    width: 92%;
+    background-color: transparent;
+	font-weight: 400;
+    padding: 2.5px;
+    padding-left: 5px;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.packaged-items-list-menu .item-slot .amount {
+	position: absolute;
+    bottom: 38px;
+    right: 0;
+    background-color: transparent;
+    font-weight: 400;
+    padding: 2.5px;
+    padding-right: 7px;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.packaged-items-list-menu .item-slot .img {
+	max-width: 100%;
+    max-height: 100%;
+    padding: 0.5vw;
+}
+
+.packaged-items-list-menu .item-slot .img img {
+	display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20%;
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 100%;
+}
+
+.packaged-items-list-menu .item-slot .extract {
+	position: absolute;
+    bottom: 0;
+    width: calc(100% - 14px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 1px;
+	cursor: pointer;
+}
+
+.packaged-items-list-menu .item-slot .extract:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.packaged-items-list-menu .bottom {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.packaged-items-list-menu .bottom .destroy {
+	position: relative;
+    display: inline-block;
+    float: left;
+    margin: 0px 0px 15px 20px;
+	padding: 5px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+	border-radius: 5px;
+    width: 140px;
+    text-align: center;
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.packaged-items-list-menu .bottom .destroy:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/********************************* packaged items amount menu *********************************/
+
+.packaged-items-amount-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 350px;
+    height: 118px;
+	padding: 12px 15px;
+    background: url(../img/bg.png);
+    background-size: 300% 300%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 85;
+}
+
+.packaged-items-amount-menu .title {
+	font-family: Poppins, sans-serif !important;
+    color: white;
+	white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.packaged-items-amount-menu .amount {
+    width: 100%;
+    background-clip: padding-box;
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+    padding: 5px 10px;
+	margin-top: 8px;
+}
+
+.packaged-items-amount-menu .amount::placeholder {
+    color: rgb(255 255 255 / 70%);
+}
+
+.packaged-items-amount-menu .confirm {
+	position: relative;
+    display: inline-block;
+    float: left;
+    margin: 10px 0px 0px 0px;
+	padding: 4px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+	border-radius: 5px;
+    width: 125px;
+    text-align: center;
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.packaged-items-amount-menu .cancel {
+	position: relative;
+    display: inline-block;
+    float: left;
+    margin: 10px 0px 0px 8px;
+	padding: 4px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+	border-radius: 5px;
+    width: 125px;
+    text-align: center;
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.packaged-items-amount-menu .confirm:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.packaged-items-amount-menu .cancel:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+
+
+/********************************* packaged items destroy menu *********************************/
+
+.packaged-items-destroy-menu {
+	display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 25px));
+	transition: transform .4s;
+    width: 460px;
+	padding: 18px 20px;
+    background: url(../img/bg.png);
+    background-size: 300% 300%;
+	background-position: center center;
+    border-radius: 6px;
+    z-index: 85;
+}
+
+.packaged-items-destroy-menu .title {
+	font-family: Poppins, sans-serif !important;
+    color: white;
+}
+
+.packaged-items-destroy-menu .confirm {
+	position: relative;
+    display: inline-block;
+    float: left;
+    margin: 10px 0px 0px 0px;
+	padding: 4px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+	border-radius: 5px;
+    width: 180px;
+    text-align: center;
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.packaged-items-destroy-menu .cancel {
+	position: relative;
+    display: inline-block;
+    float: left;
+    margin: 10px 0px 0px 8px;
+	padding: 4px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+	border-radius: 5px;
+    width: 180px;
+    text-align: center;
+	color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.packaged-items-destroy-menu .confirm:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.packaged-items-destroy-menu .cancel:hover {
+    background: rgba(255,255,255,0.2);
+}

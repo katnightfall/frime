@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karakter Boyu Ayarlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="title"><span class="menu_title"></span></div>
+        <div class="info-text">
+            <ul>
+                <li class="info1"></li>
+                <li class="info2"></li>
+                <li class="info3"></li>
+                <li class="info4"></li>
+            </ul>
+        </div>
+        <div class="height-controls">
+            <div class="slider-container">
+                <input type="range" class="slider" id="heightSlider" min="50" max="120" value="0" step="1">
+                <input type="number" value="0" class="height-value" id="heightValue">
+                <!-- <div class="height-value" id="heightValue">1.0</div> -->
+            </div>
+        </div>
+        <div class="action-buttons">
+            <div class="button-container">
+                <button id="saveBtn"><i class="fas fa-check"></i></button>
+                <div class="button-label save"></div>
+            </div>
+            <div class="button-container">
+                <button id="resetBtn"><i class="fas fa-rotate-left"></i></button>
+                <div class="button-label reset"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
