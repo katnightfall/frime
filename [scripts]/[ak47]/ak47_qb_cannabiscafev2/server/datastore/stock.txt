@@ -1,105 +1,297 @@
 {
+    "crisp_gelato_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "boss_blend_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "summit_og": {
+        "price": 500,
+        "stock": 300
+    },
+    "endurance_blend": {
+        "price": 500,
+        "stock": 300
+    },
+    "frosty_phantom_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "backroots_grape": {
+        "price": 500,
+        "stock": 300
+    },
+    "clover_crunch": {
+        "price": 500,
+        "stock": 300
+    },
+    "hary_payton": {
+        "price": 500,
+        "stock": 300
+    },
+    "zen_blend": {
+        "price": 500,
+        "stock": 300
+    },
+    "citrus_crumble": {
+        "price": 500,
+        "stock": 300
+    },
+    "lunar_stone_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "spiky_pear": {
+        "price": 500,
+        "stock": 300
+    },
+    "preston_pearl_cigars": {
+        "price": 500,
+        "stock": 300
+    },
+    "tangy_fuel_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "royal_haze_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "summit_og_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "frosty_phantom": {
+        "price": 500,
+        "stock": 300
+    },
+    "fluffy_crunch": {
+        "price": 500,
+        "stock": 300
+    },
+    "bounce_blend": {
+        "price": 500,
+        "stock": 300
+    },
+    "elegant_porcelain_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "spiced_crumble": {
+        "price": 500,
+        "stock": 300
+    },
+    "frosted_delight_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "fluffy_og_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "azure_tomyz": {
+        "price": 500,
+        "stock": 300
+    },
+    "pure_runs_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "lunar_stone": {
+        "price": 500,
+        "stock": 300
+    },
+    "biscuit_bliss": {
+        "price": 500,
+        "stock": 300
+    },
+    "bio_crunch": {
+        "price": 500,
+        "stock": 300
+    },
+    "snowberry_gelato_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "berry_muffin": {
+        "price": 500,
+        "stock": 300
+    },
+    "zen_blend_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "frosties_blend_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "tangy_fuel": {
+        "price": 500,
+        "stock": 300
+    },
+    "grain_cream": {
+        "price": 500,
+        "stock": 300
+    },
+    "elegant_porcelain": {
+        "price": 500,
+        "stock": 300
+    },
+    "peach_cobbler": {
+        "price": 500,
+        "stock": 300
+    },
+    "boss_blend": {
+        "price": 500,
+        "stock": 300
+    },
+    "azure_tomyz_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "pastry_blend": {
+        "price": 500,
+        "stock": 300
+    },
+    "crisp_gelato": {
+        "price": 500,
+        "stock": 300
+    },
+    "collins_way": {
+        "price": 500,
+        "stock": 300
+    },
+    "royal_haze": {
+        "price": 500,
+        "stock": 300
+    },
+    "berry_bliss": {
+        "price": 500,
+        "stock": 300
+    },
+    "pure_runs": {
+        "price": 500,
+        "stock": 300
+    },
+    "frosted_delight": {
+        "price": 500,
+        "stock": 300
+    },
+    "backroots_honey": {
+        "price": 500,
+        "stock": 300
+    },
+    "rosy_dunes": {
+        "price": 500,
+        "stock": 300
+    },
     "vape": {
         "price": 500,
         "stock": 300
     },
-    "oreoz_joint": {
+    "runs_elite": {
         "price": 500,
         "stock": 300
     },
-    "pirckly_pear_joint": {
+    "fig_delight": {
         "price": 500,
         "stock": 300
     },
-    "pink_sandy": {
+    "bio_crunch_joint": {
         "price": 500,
         "stock": 300
     },
-    "paris_fog": {
+    "berry_swirl": {
         "price": 500,
         "stock": 300
     },
-    "gmo_cookies_joint": {
+    "hary_payton_joint": {
         "price": 500,
         "stock": 300
     },
-    "khalifa_kush_joint": {
+    "glacatti_joint": {
         "price": 500,
         "stock": 300
     },
-    "get_figgy": {
+    "graba_wrap": {
         "price": 500,
         "stock": 300
     },
-    "blue_tomyz": {
+    "endurance_blend_joint": {
         "price": 500,
         "stock": 300
     },
-    "marshmallow_og_joint": {
+    "wild_feline_joint": {
         "price": 500,
         "stock": 300
     },
-    "pink_sandy_joint": {
+    "grain_cream_joint": {
         "price": 500,
         "stock": 300
     },
-    "pumpkin_cookie": {
+    "frosties_blend": {
         "price": 500,
         "stock": 300
     },
-    "zushi": {
+    "pastry_blend_joint": {
         "price": 500,
         "stock": 300
     },
-    "froties_joint": {
+    "choco_creme": {
         "price": 500,
         "stock": 300
     },
-    "jefe_joint": {
+    "backroots_creamy_blend": {
         "price": 500,
         "stock": 300
     },
-    "apple_gelato": {
+    "pure_cone_king": {
         "price": 500,
         "stock": 300
     },
-    "cheetah_piss": {
+    "golden_biscuit_joint": {
         "price": 500,
         "stock": 300
     },
-    "backwoods_russian_cream": {
-        "price": 1,
-        "stock": 301
-    },
-    "pogo": {
+    "golden_biscuit": {
         "price": 500,
         "stock": 300
     },
-    "blueberry_jam_cookie": {
+    "fluffy_og": {
         "price": 500,
         "stock": 300
     },
-    "marathon_joint": {
+    "collins_way_joint": {
         "price": 500,
         "stock": 300
     },
-    "raw_cone_king": {
-        "price": 500,
-        "stock": 298
-    },
-    "fine_china": {
+    "sunset_secret": {
         "price": 500,
         "stock": 300
     },
-    "whitecherry_gelato": {
+    "vapor_essence": {
         "price": 500,
         "stock": 300
     },
-    "gmo_cookies": {
+    "choco_creme_joint": {
         "price": 500,
         "stock": 300
     },
-    "ether_joint": {
+    "spiky_pear_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "blend_99": {
+        "price": 500,
+        "stock": 300
+    },
+    "runs_elite_joint": {
+        "price": 500,
+        "stock": 300
+    },
+    "vapor_essence_joint": {
         "price": 500,
         "stock": 300
     },
@@ -107,27 +299,11 @@
         "price": 500,
         "stock": 300
     },
-    "sour_diesel_joint": {
+    "sunset_secret_joint": {
         "price": 500,
         "stock": 300
     },
-    "banana_backwoods": {
-        "price": 200,
-        "stock": 300
-    },
-    "tahoe_og_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "white_runtz": {
-        "price": 500,
-        "stock": 300
-    },
-    "grabba_leaf": {
-        "price": 500,
-        "stock": 300
-    },
-    "marshmallow_crisp": {
+    "wild_feline": {
         "price": 500,
         "stock": 300
     },
@@ -135,211 +311,35 @@
         "price": 500,
         "stock": 300
     },
-    "cake_mix": {
+    "glacatti": {
         "price": 500,
         "stock": 300
     },
-    "backwoods_grape": {
-        "price": 200,
-        "stock": 298
-    },
-    "fine_china_joint": {
+    "snowberry_gelato": {
         "price": 500,
         "stock": 300
     },
-    "la_confidential": {
+    "peach_cobbler_joint": {
         "price": 500,
         "stock": 300
     },
-    "khalifa_kush": {
+    "banana_backroots": {
         "price": 500,
         "stock": 300
     },
-    "blueberry_cruffin_joint": {
+    "paris_mist": {
         "price": 500,
         "stock": 300
     },
-    "moon_rock_joint": {
+    "berry_muffin_joint": {
         "price": 500,
         "stock": 300
     },
-    "cookie_craze": {
+    "golden_crumble": {
         "price": 500,
         "stock": 300
     },
-    "sour_diesel": {
-        "price": 500,
-        "stock": 300
-    },
-    "marathon": {
-        "price": 500,
-        "stock": 300
-    },
-    "ice_cream_cake_pack": {
-        "price": 500,
-        "stock": 300
-    },
-    "whitecherry_gelato_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "white_runtz_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "la_confidential_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "oreoz": {
-        "price": 500,
-        "stock": 300
-    },
-    "biscotti_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "zushi_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "blue_tomyz_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "key_lime_cookie": {
-        "price": 500,
-        "stock": 300
-    },
-    "shamrock_cookie": {
-        "price": 500,
-        "stock": 300
-    },
-    "ether": {
-        "price": 500,
-        "stock": 300
-    },
-    "ice_cream_cake_pack_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "paxton_pearl_cigars": {
-        "price": 500,
-        "stock": 298
-    },
-    "froties": {
-        "price": 500,
-        "stock": 300
-    },
-    "snow_man_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "marshmallow_og": {
-        "price": 500,
-        "stock": 300
-    },
-    "no_99": {
-        "price": 500,
-        "stock": 300
-    },
-    "snow_man": {
-        "price": 500,
-        "stock": 300
-    },
-    "collins_ave_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "tahoe_og": {
-        "price": 500,
-        "stock": 300
-    },
-    "cake_mix_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "blueberry_cruffin": {
-        "price": 500,
-        "stock": 300
-    },
-    "butter_cookie": {
-        "price": 500,
-        "stock": 300
-    },
-    "gary_payton_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "strawberry_jam_cookie": {
-        "price": 500,
-        "stock": 300
-    },
-    "cereal_milk_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "cheetah_piss_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "gelatti_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "georgia_pie_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "apple_gelato_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "collins_ave": {
-        "price": 500,
-        "stock": 300
-    },
-    "gary_payton": {
-        "price": 500,
-        "stock": 300
-    },
-    "pirckly_pear": {
-        "price": 500,
-        "stock": 300
-    },
-    "moon_rock": {
-        "price": 500,
-        "stock": 300
-    },
-    "backwoods_honey": {
-        "price": 500,
-        "stock": 300
-    },
-    "jefe": {
-        "price": 500,
-        "stock": 300
-    },
-    "georgia_pie": {
-        "price": 500,
-        "stock": 300
-    },
-    "gelatti": {
-        "price": 500,
-        "stock": 300
-    },
-    "runtz_og": {
-        "price": 500,
-        "stock": 299
-    },
-    "runtz_og_joint": {
-        "price": 500,
-        "stock": 300
-    },
-    "cereal_milk": {
-        "price": 500,
-        "stock": 300
-    },
-    "biscotti": {
+    "rosy_dunes_joint": {
         "price": 500,
         "stock": 300
     }

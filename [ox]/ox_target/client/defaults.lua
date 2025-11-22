@@ -30,7 +30,7 @@ end
 ---@param useOffset boolean?
 ---@return boolean?
 local function canInteractWithDoor(entity, coords, door, useOffset)
-    if not GetIsDoorValid(entity, door) or GetVehicleDoorLockStatus(entity) > 1 or IsVehicleDoorDamaged(entity, door) or cache.vehicle then return end
+    if not GetIsDoorValid(entity, door) or GetVehicleDoorLockStatus(entity) > 1 or IsVehicleDoorDamaged(entity, door) then return end
 
     if useOffset then return true end
 
@@ -38,7 +38,7 @@ local function canInteractWithDoor(entity, coords, door, useOffset)
 
     if not boneName then return false end
 
-    local boneId = GetEntityBoneIndexByName(entity, 'door_' .. boneName)
+    boneId = GetEntityBoneIndexByName(entity, 'door_' .. boneName)
 
     if boneId ~= -1 then
         return #(coords - GetEntityBonePosition_2(entity, boneId)) < 0.5 or

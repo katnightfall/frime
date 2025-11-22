@@ -1,4 +1,4 @@
-if not lib.checkDependency('ox_lib', '3.30.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.21.0', true) then return end
 
 lib.locale()
 
@@ -9,6 +9,7 @@ local options = require 'client.api'.getTargetOptions()
 require 'client.debug'
 require 'client.defaults'
 require 'client.compat.qtarget'
+require 'client.compat.qb-target'
 
 local SendNuiMessage = SendNuiMessage
 local GetEntityCoords = GetEntityCoords
@@ -289,7 +290,7 @@ local function startTargeting()
         end
 
         if newOptions then
-            if hasTarget == 1 and (totalOptions - hidden) > 1 then
+            if hasTarget == 1 and options.size > 1 then
                 hasTarget = true
             end
 
@@ -433,12 +434,10 @@ RegisterNUICallback('select', function(data, cb)
             state.setNuiFocus(false)
         end
 
-        currentTarget.zone = zone?.id
-
         if option.onSelect then
             option.onSelect(option.qtarget and currentTarget.entity or getResponse(option))
         elseif option.export then
-            exports[option.resource or zone.resource][option.export](nil, getResponse(option))
+            exports[option.resource][option.export](nil, getResponse(option))
         elseif option.event then
             TriggerEvent(option.event, getResponse(option))
         elseif option.serverEvent then
