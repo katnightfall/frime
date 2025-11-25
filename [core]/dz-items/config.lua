@@ -1,10 +1,10 @@
 Config = {}
 
 -- Framework
-Config.Framework = "qbcore" -- Set you framework: "qbcore" for QBCore and QBox frameworks, and "esx" for ESX Legacy framework
+Config.Framework = "qbcore" -- Set you framework "qbcore" or "esx"
 
 -- QBCore Framework
-Config.QBCoreName = 'qb-core' -- QBCore script name, default is "qb-core". Keep this to "qb-core" if your framework is QBox
+Config.QBCoreName = 'qb-core' -- QBCore script name, default is "qb-core"
 
 -- ESX Legacy Framework
 Config.ESXLegacyName = "es_extended" -- You ESX Legacy script name must be correct to work (only if you use ESX Legacy Framework)
@@ -16,16 +16,16 @@ Config.ESXLegacyName = "es_extended" -- You ESX Legacy script name must be corre
 -- QBCore Framework works with both "qb-inventory" and "ox_inventory" inventories scripts
 -- ESX Legacy Framework works with only "ox_inventory" inventory script
 
-Config.InventoryType = 'qb' -- Inventory type "qb" or "ox"
-Config.InventoryName = 'qb-inventory' -- Inventory script name - "qb-inventory" or "ox_inventory" for QBCore Framework | "ox_inventory" for ESX Legacy Framework
+Config.InventoryType = 'ox' -- Inventory type "qb" or "ox"
+Config.InventoryName = 'ox_inventory' -- Inventory script name - "qb-inventory" or "ox_inventory" for QBCore Framework | "ox_inventory" for ESX Legacy Framework
 
-Config.InvImagesLocation = 'qb-inventory/html/images/' -- Inventory images location - "qb-inventory/html/images/" for qb-inventory | "ox_inventory/web/images/" for ox_inventory
+Config.InvImagesLocation = '/web/images/' -- Inventory images location - "/html/images/" for qb-inventory | "/web/images/" for ox_inventory
 
-Config.ItemsAmountType = 'amount' -- For custom inventory items amount/count - "amount" for qb-inventory | "count" for ox_inventory
+Config.ItemsAmountType = 'count' -- For custom inventory items amount/count - "amount" for qb-inventory | "count" for ox_inventory
 
 -- Inventory Slots & Weight
 Config.MaxInventorySlots = 41 -- Max inventory slots for a player - "41" for qb-inventory or "50" for ox_inventory
-Config.MaxInventoryWeight = 120000 -- in grams, max weight a player can carry, please check your inventory settings - examples: "120000" for qb-inventory | "30000" for ox_inventory | "24000" for ESX Framework
+Config.MaxInventoryWeight = 120000 -- in Grams, Max weight a player can carry - "120000" for qb-inventory | "30000" for ox_inventory | "24000" for ESX Framework
 
 ------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------- Admin --------------------------------------------------------
@@ -45,22 +45,9 @@ Config.PackageItem = 'packaged_items' -- Package item spawn name
 Config.PackageWeight = 1000 -- in Grams, The Package item (packaged items) weight (default 1kg)
 
 ------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------- Blacklisted Items ---------------------------------------------------
-
-Config.BlacklistedItems = { -- Those items will not be shown in the items list, admins cannot spawn them
-	'weapon_rpg',
-	'weapon_grenadelauncher',
-	'weapon_railgun',
-	
-	'black_money',
-	
-	-- more examples here
-}
-
-------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------- Translations -----------------------------------------------------
 
-Config.NewLine = '<br>' -- It depends on you notification system | "<br>" or "\n"
+Config.NewLine = '<br>' -- It depends on you notification system | "<br>" or "/n"
 
 Config.Translations = {
 	-- UI Translations

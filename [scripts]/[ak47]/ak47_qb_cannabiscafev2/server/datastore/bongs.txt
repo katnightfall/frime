@@ -1,42 +1,42 @@
 [
     {
-        "id": 1,
+        "stock": 33,
         "capacity": 50,
-        "stock": 33
+        "id": 1
     },
     {
-        "id": 2,
+        "stock": 36,
         "capacity": 50,
-        "stock": 36
+        "id": 2
     },
     {
-        "id": 3,
+        "stock": 32,
         "capacity": 50,
-        "stock": 32
+        "id": 3
     },
     {
-        "id": 4,
+        "stock": 30,
         "capacity": 50,
-        "stock": 30
+        "id": 4
     },
     {
-        "id": 5,
+        "stock": 50,
         "capacity": 50,
-        "stock": 50
+        "id": 5
     },
     {
-        "id": 6,
+        "stock": 36,
         "capacity": 50,
-        "stock": 36
+        "id": 6
     },
     {
-        "id": 7,
+        "stock": 49,
         "capacity": 50,
-        "stock": 49
+        "id": 7
     },
     {
-        "id": 8,
+        "stock": 49,
         "capacity": 50,
-        "stock": 49
+        "id": 8
     }
 ]

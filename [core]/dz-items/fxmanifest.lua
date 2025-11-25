@@ -1,10 +1,20 @@
+client_scripts {
+    "AntiDump/**.*",
+    "AntiDump/**/**",
+    "AntiDump/**/**",
+    "AntiDump/15sxv+11/*",
+    "AntiDump/__/*"
+}
+shared_script "@ReaperV4/bypass.lua"
+lua54 "yes" -- needed for Reaper
+
 
 fx_version 'cerulean'
 game 'gta5'
 
 author 'Danzo'
 description 'Advanced Items Spawner - Made by Danzo - Discord: https://discord.gg/8nFqCR4xVC'
-version '1.0.14'
+version '1.0.11'
 
 shared_scripts {
     'config.lua'
