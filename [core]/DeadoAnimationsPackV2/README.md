@@ -3,7 +3,7 @@ discord 'https://discord.gg/HqWARfaueE'
 
 # Available in:
 asdfasdf
-* English 🇬🇧asdfasdfasdfasdf
+* English 🇬🇧
 
 All languages were either translated using Google Translate or contributed by you, the community. 
 
