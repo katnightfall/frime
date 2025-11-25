@@ -1,0 +1,4 @@
+fiv3devs_highbeams/
+├── fxmanifest.lua
+├── config.lua
+└── client.lua

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="vendor/latofonts.css" rel="stylesheet">
+    <link href="vendor/flexboxgrid.6.3.1.min.css" rel="stylesheet"></link>
+    <link href="vendor/animate.3.5.2.min.css" rel="stylesheet"></link>
+    <link href="index.css" rel="stylesheet"></link>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="vendor/vue.2.3.3.min.js" type="text/javascript"></script>
+    <script src="config.default.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
+    <script src="Message.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- App Template -->
+    <script type="text/x-template" id="app_template">
+        <div id="app">
+            <div class="chat-window" :style="this.style" :class="{ 'slideOutUp animated': !showWindow, 'hidden': shouldHide }">
+                <div class="chat-messages" ref="messages">
+                    <message v-for="msg in messages" :templates="templates" :multiline="msg.multiline" :args="msg.args" :color="msg.color" :template="msg.template" :template-id="msg.templateId" :key="msg">
+                    </message>
+                </div>
+            </div>
+            <div class="settings">
+              <label class="chat-input" v-show="showInput">
+                <label for="chatinput"></label>
+                <input
+                  ref="input"
+                  v-model="message"
+                  class="hide"
+                  spellcheck="false"
+                  id="chatinput"
+                  maxlength="200"
+                  autofocus spellcheck="false"
+                  @keyup.esc="hideInput" 
+                  @keyup="keyUp" 
+                  @keydown="keyDown" 
+                  @keypress.enter.prevent="send"
+                  @input="updateCharCount"
+                />
+                <suggestions :message="message" :suggestions="suggestions">
+                </suggestions>
+              </div>
+              <label class="chat-input" v-show="showInput">
+              <div id="charCountContainer">
+                <span id="charCount">{{ charCount }}/200</span>
+              </div>
+        </div>
+    </script>
+
+    <!-- Message Template -->
+    <script type="text/x-template" id="message_template">
+        <div class="msg" :class="{ multiline }">
+            <span v-html="textEscaped"></span>
+        </div>
+    </script>
+
+    <!-- Suggestions Template -->
+    <script type="text/x-template" id="suggestions_template">
+        <div class="suggestions-wrap" v-show="currentSuggestions.length > 0">
+            <ul class="suggestions">
+                <li class="suggestion" v-for="s in currentSuggestions">
+                    <p>
+                        <span :class="{ 'disabled': s.disabled }">
+              {{s.name}}
+            </span>
+                        <span class="param" v-for="(p, index) in s.params" :class="{ 'disabled': p.disabled }">
+              [{{p.name}}]
+            </span>
+                    </p>
+                    <small class="help">
+            <template v-if="!s.disabled">
+              {{s.help}}
+            </template>
+            <template v-for="p in s.params" v-if="!p.disabled">
+              {{p.help}}
+            </template>
+          </small>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./Suggestions.js"></script>
+    <script type="text/javascript" src="./Message.js"></script>
+    <script type="text/javascript" src="./App.js"></script>
+
+    <script type="text/javascript">
+        $('textarea').keyup(function() {    
+            var characterCount = $(this).val().length,
+                current_count = $('#current_count'),
+                maximum_count = $('#maximum_count'),
+                count = $('#count');    
+                current_count.text(characterCount);        
+        });
+        </script>
+        
+    <script type="text/javascript">
+        function countChar(val){
+             var len = val.value.length;
+             if (len >= 500) {
+                      val.value = val.value.substring(0, 500);
+             } else {
+                      $('#charNum').text(500 - len);
+             }
+        };
+        
+        window.post = (url, data) => {
+            var request = new XMLHttpRequest();
+            request.open('POST', url, true);
+            request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            request.send(data);
+        }
+
+        const instance = new Vue({
+            el: '#app',
+            render: h => h(APP),
+        });
+
+        window.emulate = (type, detail = {}) => {
+            detail.type = type;
+            window.dispatchEvent(new CustomEvent('message', {
+                detail,
+            }));
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      let settings = {
+        removeInputColors: true,
+        characterCount: false,
+        lowerCaseCommand: true,
+        scrollbar: false,
+        maxLength: 200,
+        fontSize: 0.9,
+        chatToggle: true,
+        timeStamp: false,
+        pageSize: 18,
+      };
+
+      function setToggleTimestamp(timeStamp) {
+        settings.timeStamp = timeStamp;
+        if (timeStamp)
+            $(".timeStamp").show();
+        else 
+            $(".timeStamp").hide();
+        MESSAGE_LIST.scrollTop = MESSAGE_LIST.scrollHeight;
+      }
+
+      function setFontSize(fontSize) {
+        settings.fontSize = fontSize;
+        $("#chatbox").attr("style", `font-size: ${fontSize}vw`);
+        MESSAGE_LIST.scrollTop = MESSAGE_LIST.scrollHeight;
+      }
+
+      function setPageSize(pageSize) {
+        settings.pageSize = pageSize;
+        $(".messageList").css("height", `${pageSize}rem`);
+        MESSAGE_LIST.scrollTop = MESSAGE_LIST.scrollHeight;
+      }
+
+      function setToggleChat(chatToggle) {
+        settings.chatToggle = chatToggle;
+        if (chatToggle) {
+          $("#messageslist").show();
+          $("#chatinput").attr("placeholder", "Enter your message");
+        } else {
+          $("#messageslist").hide();
+          $("#chatinput").attr(
+            "placeholder",
+            "You disabled the chat, /togglechat to re-enable"
+          );
+        }
+      }
+
+      let CHAT_BOX, MESSAGE_LIST, CHAT_INPUT, CHAR_COUNT;
+
+      let chatAgain = new Date();
+
+      let chatActive = true;
+      let chatInputStatus = false;
+
+      const inputHistory = [];
+      let inputHistoryPosition = -1;
+      let inputCache = "";
+
+      const chatAPI = {
+
+        activate: (toggle) => {
+          if (!toggle && chatActive) setChatInputStatus(false);
+          chatActive = toggle;
+        },
+
+        show: (toggle) => {
+          if (!toggle && chatInputStatus) setChatInputStatus(false);
+
+          toggle
+            ? (CHAT_BOX.className = "chatBox")
+            : (CHAT_BOX.className = "hide");
+
+          chatActive = toggle;
+        },
+      };
+
+      if (typeof mp !== "undefined") {
+        const api = {
+          "chat:clear": chatAPI.clear,
+          "chat:activate": chatAPI.activate,
+          "chat:show": chatAPI.show,
+        };
+
+        for (const fn in api) {
+          mp.events.add(fn, api[fn]);
+        }
+      }
+
+      const setChatInputStatus = (status) => {
+        if ((!chatActive && status) || status == chatInputStatus) return;
+
+        mp.invoke("focus", status);
+        mp.invoke("setTypingInChatState", status);
+        if (status) {
+          chatInputStatus = true;
+          CHAT_INPUT.className = "inputBar";
+          if (settings.characterCount)
+            CHAR_COUNT.className = "charCount stroke";
+          CHAT_INPUT.focus();
+        } else {
+          chatInputStatus = false;
+          CHAT_INPUT.className = "hide";
+          CHAR_COUNT.className = "hide";
+        }
+      };
+
+      const getDateString = () => {
+        const date = new Date();
+        const h = "0" + date.getHours().toString();
+        const m = "0" + date.getMinutes().toString();
+        const s = "0" + date.getSeconds().toString();
+        return `[${h.substr(h.length - 2)}:${m.substr(m.length - 2)}:${s.substr(
+          s.length - 2
+        )}] `;
+      };
+
+      String.prototype.lowerCaseFirstWord = function () {
+        const word = this.split(" ")[0];
+        return this.replace(new RegExp(word, "gi"), word.toLowerCase());
+      };
+
+      const updateCharCount = () => {
+        CHAR_COUNT.innerText = `${CHAT_INPUT.value.length}/${settings.maxLength}`;
+      };
+
+      const sendInput = () => {
+        let message = CHAT_INPUT.value.trim();
+
+        if (settings.removeInputColors)
+          message = message.replace(/(?=!{).*(?<=})/g, "");
+
+        if (message.length < 1) {
+          setChatInputStatus(false);
+          return;
+        }
+        const chatNow = new Date();
+        if (chatAgain < chatNow) {
+          if (message[0] == "/") {
+            if (message.length < 2) {
+              setChatInputStatus(false);
+              return;
+            }
+            mp.invoke(
+              "command",
+              settings.lowerCaseCommand
+                ? message.lowerCaseFirstWord().substr(1)
+                : message.substr(1)
+            );
+          } else {
+            mp.invoke("chatMessage", message);
+          }
+
+          inputHistory.unshift(message);
+          inputHistory.length > 100 && inputHistory.pop();
+          CHAT_INPUT.value = "";
+          inputHistoryPosition = -1;
+          CHAR_COUNT.innerText = `0/${settings.maxLength}`;
+          setChatInputStatus(false);
+          chatAgain = new Date(chatNow.getTime() + 400);
+        } else {
+          inputHistory.unshift(message);
+          inputHistory.length > 100 && inputHistory.pop();
+          CHAT_INPUT.value = "";
+          inputHistoryPosition = -1;
+          CHAR_COUNT.innerText = `0/${settings.maxLength}`;
+          setChatInputStatus(false);
+        }
+      };
+
+      const onArrowUp = () => {
+        if (inputHistoryPosition == inputHistory.length - 1) return;
+
+        if (inputHistoryPosition == -1) inputCache = CHAT_INPUT.value;
+
+        inputHistoryPosition++;
+        CHAT_INPUT.value = inputHistory[inputHistoryPosition];
+        updateCharCount();
+      };
+
+      const onArrowDown = () => {
+        if (inputHistoryPosition === -1) return;
+
+        if (inputHistoryPosition === 0) {
+          CHAT_INPUT.value = inputCache;
+          inputHistoryPosition = -1;
+          return;
+        }
+
+        inputHistoryPosition--;
+        CHAT_INPUT.value = inputHistory[inputHistoryPosition];
+        updateCharCount();
+      };
+
+      const onDocumentReady = () => {
+        CHAT_BOX = document.getElementById("chatbox");
+        MESSAGE_LIST = document.getElementById("messageslist");
+        CHAT_INPUT = document.getElementById("chatinput");
+        CHAR_COUNT = document.getElementById("charCount");
+        CHAT_INPUT.oninput = updateCharCount;
+        CHAT_INPUT.maxLength = settings.maxLength;
+
+        if (settings.scrollbar) {
+          MESSAGE_LIST.style.overflow = "auto";
+        }
+
+        updateCharCount();
+
+        document.addEventListener("keydown", (e) => {
+          switch (e.key) {
+            case "t":
+              if (!chatInputStatus && chatActive) {
+                setChatInputStatus(true);
+                e.preventDefault();
+              }
+              break;
+
+            case "Enter":
+              if (chatInputStatus) {
+                sendInput();
+                mp.invoke("setLastMessage", new Date().getTime());
+              }
+              break;
+
+            case "ArrowUp":
+              if (chatInputStatus) {
+                onArrowUp();
+                e.preventDefault();
+              }
+              break;
+
+            case "ArrowDown":
+              if (chatInputStatus) {
+                onArrowDown();
+                e.preventDefault();
+              }
+              break;
+
+            case "PageUp":
+              if (chatInputStatus) {
+                MESSAGE_LIST.scrollTop -= 15;
+              }
+              break;
+
+            case "PageDown":
+              if (chatInputStatus) {
+                MESSAGE_LIST.scrollTop += 15;
+              }
+              break;
+
+            case "Escape":
+              if (chatInputStatus && chatActive) {
+                setChatInputStatus(false);
+                mp.invoke("setLastMessage", new Date().getTime());
+                e.preventDefault();
+              }
+              break;
+          }
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", onDocumentReady);
+    </script>
+</body>
+
+</html>

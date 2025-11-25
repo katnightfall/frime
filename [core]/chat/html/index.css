@@ -1,0 +1,204 @@
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+
+* {
+  font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.no-grow {
+  flex-grow: 0;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+em {
+  font-style: normal;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+#app {
+  font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+
+  .placeholder {
+    text-align: end;
+    font-size: 15px;
+    color: #e4e4e4;
+  }
+  
+  .answer {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+  }
+
+.chat-window {
+  position: absolute;
+  top: 1.5%;
+  left: 0.8%;
+  width: 38%;
+  height: 50%;
+  max-width: 1000px;
+  background-color: rgba(52, 73, 94, 0.0);
+  -webkit-animation-duration: 11s;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+
+.chat-messages {
+  position: relative;
+  height: 120%;
+  font-size: 1.8vh;
+  margin: 0.5%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+.chat-input {
+  font-size: 1.44vh;
+  position: absolute;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  top: 30.0%;
+  left: 0.8%;
+  
+  width: 38%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.prefix {
+  font-size: 1.44vh;
+  position: absolute;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  margin-top: 1.0%;
+  left: 0.308%;
+}
+
+.character {
+  color:rgb(231, 231, 231);
+  position: relative;
+  text-align: left;
+}
+
+input {
+  font-size: 1.44vh;
+  display: block;
+  box-sizing: border-box;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  height:18.5px;
+  border:1px solid #000;
+  padding:18.5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.69);
+  width: 68%;
+  border-color: transparent;
+  border-width: 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: slide-in-blurred-tl 2.8s cubic-bezier(0.250, 1.000, 0.320, 1.000) both
+}
+
+.input-container {
+  position: relative;
+}
+
+#charCountContainer {
+  position: absolute;
+  top: 20px; /* Adjust the top distance in pixels as needed */
+  left: 500px; /* Adjust the left distance as needed */
+  transform: translateY(-50%);
+}
+
+
+#charCount {
+  color: white;
+  font-size: 15px; /* Adjust the font size as needed */
+}
+
+
+
+.inputBar {
+  position: relative;
+  /* Add any other styles you have for the input bar */
+}
+
+input:focus, input:focus {
+    outline: none;
+    text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.msg {
+  margin-bottom: 0.28%;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.multiline {
+  margin-left: 4%;
+  text-indent: -1.2rem;
+  white-space: pre-line;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 0.5%;
+  padding-left: 1.4%;
+  font-size: 1.44vh;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  background-color: #000;
+  border-color: #000;
+  border-width: 1%;
+  width: 68%;
+  animation: slide-in-blurred-tl 1.0s cubic-bezier(0.230, 1.000, 0.320, 1.000) both
+}
+
+.help {
+  color: #ffffff;
+  color: #ffffff;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.disabled {
+  color: white
+}
+
+.suggestion {
+  margin-bottom: 0.5%;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slide-in-blurred-tl {
+  0% {
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    transform-origin: 15% 0%;
+    filter: blur(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) skew(0deg, 0deg);
+    transform-origin: 30% 30%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}

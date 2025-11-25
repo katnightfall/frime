@@ -1,0 +1,114 @@
+@font-face {
+    font-family: bankgothic;
+    src: url('./bankgothic.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    position: absolute;
+    height: auto;
+    top: 20%;
+    right: 20%;
+    border-radius: 5px;
+    background: transparent !important;
+
+}
+
+#buttons {
+    max-height: 75vh;
+    width: 35vw;
+    overflow-x: none;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+    body {
+        background: none !important;
+        cursor: url('https://i.imgur.com/d9LjPxT.png'), auto;	
+
+    }
+    button:hover, a:hover {
+        cursor: url('https://i.imgur.com/dAD9nIy.png'), auto !important;	
+    
+    }
+	
+html,body {
+    background: transparent !important;
+}
+
+#buttons::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.button {
+    width: auto;
+    max-width: 45%;
+    height: 10%;
+
+    margin: auto;
+    position: relative;
+    top: 10%;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    padding: 0.45rem;
+    background-color: #5b5b5b;
+	text-shadow: 1px 1px 1px rgba(0,0,0, 0.7);
+	box-shadow: 0rem 0rem 0.5rem 0.05rem #000000;
+    display: flex;
+    flex-direction: column;
+border-radius: 5px;
+	animation: entrada-descripcion ease-in-out 1.2s forwards;
+
+}
+
+.button:hover{
+    background-color: rgba(201, 42, 42, 0.4);
+	cursor: url('https://i.imgur.com/dAD9nIy.png'), auto !important;	
+}
+
+.button > .txt {
+    color: rgb(232, 229, 229);
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    overflow: hidden;
+    font-weight: 300;
+}
+
+.button > .header {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: left;
+    overflow: wrap;
+    color:  rgb(232, 229, 229);
+    font-family: bankgothic;
+    font-size: 0.9rem;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+
+@keyframes entrada-descripcion {
+    0% {
+        transform: translateY(-180px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 100;
+    }
+}
+
+

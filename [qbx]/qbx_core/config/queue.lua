@@ -1,7 +1,7 @@
 local serverName = require 'config.shared'.serverName
 
 return {
-    ---Amount of seconds to wait before removing a player from the queue after disconnecting while waiting.
+    ---Amount of seconds t2o wait before removing a player from the queue after disconnecting while waiting.
     timeoutSeconds = 30,
 
     ---Amount of seconds to wait before removing a player from the queue after disconnecting while installing server data.
