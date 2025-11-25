@@ -2,20 +2,8 @@ deadopps5707 'Deado Shop'
 discord 'https://discord.gg/HqWARfaueE'
 
 # Available in:
-
+asdfasdf
 * English 🇬🇧
-* Brazilian Portuguese 🇧🇷
-* Czech 🇨🇿
-* Danish 🇩🇰
-* Dutch 🇳🇱
-* Finnish 🇫🇮
-* French 🇫🇷
-* German 🇩🇪
-* Italian 🇮🇹
-* Polish 🇵🇱
-* Romanian 🇷🇴
-* Spanish 🇪🇸
-* Swedish 🇸🇪
 
 All languages were either translated using Google Translate or contributed by you, the community. 
 
