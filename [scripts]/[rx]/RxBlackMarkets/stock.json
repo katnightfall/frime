@@ -1,10 +1,7 @@
 {
     "Criminal Market": {
+        "lastReset": 1764309640,
         "stock": {
-            "WEAPON_MINISMG": {
-                "players": [],
-                "global": 10
-            },
             "WEAPON_ASSAULTRIFLE": {
                 "players": [],
                 "global": 10
@@ -12,8 +9,11 @@
             "WEAPON_PISTOL": {
                 "players": [],
                 "global": 10
+            },
+            "WEAPON_MINISMG": {
+                "players": [],
+                "global": 10
             }
-        },
-        "lastReset": 1764223234
+        }
     }
 }

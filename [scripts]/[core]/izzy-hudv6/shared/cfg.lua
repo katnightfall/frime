@@ -21,7 +21,7 @@ cfg = {
     notifyStyle = 1, -- 1 / 2 / 3
     notifyPosition = 'top-center', -- top-left / top-center / top-right --- bottom-left / bottom-center / bottom-right
 
-    serverName = 'Izzy Shop',
+    serverName = 'Frime',
     serverDesc = 'Roleplay',
 
     currency = {
